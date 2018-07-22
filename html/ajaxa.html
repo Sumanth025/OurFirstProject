@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<!-- <form action="index.php" method="POST"> -->
+	<input id="name" type="text" name="student_name" placeholder="student_name">
+	<input id="email"type="email" name="student_email" placeholder="student_email">
+	<input id="date" type="date" name="student_date" placeholder="student_date">
+	<button onclick="call()">click</button>
+<!-- </form> -->
+
+
+<p id="call"></p>
+
+<!-- <script type="text/javascript">
+	function call(){
+		alert('hi');
+		alert(document.getElementById('name').value);
+	}
+</script> -->
+
+<script>
+function call(){
+	var name=document.getElementById('name').value;
+	var email=document.getElementById('email').value;
+	var date=document.getElementById('date').value;
+             if (window.XMLHttpRequest) {
+             	
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                  } else { // code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                  }  
+                  
+                  xmlhttp.onreadystatechange=function() {
+                  	
+                    if (this.readyState==4) {
+                      document.getElementById("call").innerHTML=this.responseText;
+                      
+                    }
+                    else{
+                    	
+                    }
+                  }
+                  xmlhttp.open("GET","index.php?student_name="+name+"&student_email=" +email+"&student_date=" +date,true);
+                  xmlhttp.send();
+         }
+     </script>
+</body>
+</html>

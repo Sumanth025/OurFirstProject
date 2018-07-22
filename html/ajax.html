@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+	<button onclick="call()"> click </button>
+
+<p id="call"></p>
+
+
+
+<script type="text/javascript">
+ function call(){
+
+if(window.XMLHttpRequest){
+	
+xmlhttp = new XMLHttpRequest();
+}
+
+           else{
+	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+}
+xmlhttp.onreadystatechange = function() {
+
+if(this.readyState == 4) {
+	
+	document.getElementById("call").innerHTML = this.responseText;
+}
+else{
+	
+}
+}
+
+
+xmlhttp.open("GET", "tablephp.html", true);
+xmlhttp.send();
+</script>
+
+</body>
+</html>
